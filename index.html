@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <title>Chat App</title>
 </head>
@@ -15,15 +18,41 @@
         <div class="login login--hidden">
 
             <input class="username" type="text" placeholder="Username"> <br><br>
-            <input class="password" type="text" placeholder="Password" maxlength="4"> <br><br>
+            <input class="password" type="password" placeholder="Password" maxlength="4"><br><br>
             <button class="login-button">Login</button>
 
         </div>
 
         <div class="chat chat--hidden">
 
-            <h1>W E L C O M E</h1>
+            <img class="profile-img" src="images/a1.jpg">
+            <p class="name"></p>
 
+            <div class="white-overlay">
+                <div class="header">
+                    <img class="chat-img" src="images/a1.jpg" width="50" height="50">
+                    <p class="contact"></p>
+                </div>
+
+                <hr>
+
+                <div class="look">
+
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="inline">
+                <input class="message" type="text" placeholder="Type something...">
+                <button class="send-message">⇗</button>
+            </div>
+
+            <br><br>
+
+            <button class="logout-button">Logout</button>
+            
         </div>
 
     </div>
