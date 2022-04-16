@@ -16,12 +16,26 @@
     padding-bottom: 150px;
 }
 
+.login-overlay{
+    padding: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.login-info{
+    font-family: sans-serif;
+    padding-bottom: 30px;
+    font-size: 18px;
+}
+
 .username, .password{
     padding: 10px;
     font-size: 18px;
 }
 
 .login-button{
+    width: 250px;
     padding: 10px;
     font-size: 18px;
     background-color: rgb(255, 95, 31);

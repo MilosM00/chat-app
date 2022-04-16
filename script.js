@@ -35,7 +35,6 @@ const divChat = document.querySelector(`.chat`);
 
 
 divLogin.classList.remove(`login--hidden`);
-// divChat.classList.remove(`chat--hidden`);
 
 const createUsernames = function(accs){
     accs.forEach(acc => {
