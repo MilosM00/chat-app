@@ -3,13 +3,13 @@
 
 const account1 = {
     owner: `Jason Johnson`,
-    pin: 1234,
+    password: 1234,
     image: `images/a1.jpg`
 };
 
 const account2 = {
     owner: `Sandra White`,
-    pin: 4321,
+    password: 4321,
     image: `images/a2.jpg`
 };
 
@@ -47,7 +47,7 @@ createUsernames(accounts);
 buttonLogin.addEventListener(`click`, () =>{
     currentAccount = accounts.find(acc => acc.username === inputUsername.value);
 
-    if(currentAccount?.pin === Number(inputPassword.value)){
+    if(currentAccount?.password === Number(inputPassword.value)){
         inputUsername.value = ``;
         inputPassword.value = ``;
 
