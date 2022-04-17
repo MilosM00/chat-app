@@ -132,6 +132,22 @@ hr{
     border: solid 1px rgba(0, 0, 0, 0.7);
 }
 
+.look{
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    text-align: right;
+}
+
+.text-message{
+    font-family: sans-serif;
+    font-size: 17px;
+    background-color: rgb(255, 95, 31);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 30px;
+}
+
 .chat--hidden{
     display: none;
 }

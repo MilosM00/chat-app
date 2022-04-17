@@ -29,9 +29,12 @@ const contact = document.querySelector(`.contact`);
 const nameText = document.querySelector(`.name`);
 const profileImage = document.querySelector(`.profile-img`);
 const chatImage = document.querySelector(`.chat-img`);
+const look = document.querySelector(`.look`); // div look
+const textMessage = document.querySelector(`.text-message`); // div text-message
 
 const divLogin = document.querySelector(`.login`);
 const divChat = document.querySelector(`.chat`);
+const divSpaceMessage = document.querySelector(`.space-message`);
 
 
 divLogin.classList.remove(`login--hidden`);
@@ -71,4 +74,17 @@ buttonLogout.addEventListener(`click`, () =>{
     divLogin.classList.remove(`login--hidden`);
     divChat.classList.add(`chat--hidden`);
     inputMessage.value = ``;
+});
+
+buttonSendMessage.addEventListener(`click`, () =>{
+    let html = `
+    <div class="look">
+    <span class="text-message">${inputMessage.value}</span>
+    </div>
+    `;
+    
+    inputMessage.value = ``;
+    inputMessage.focus();
+    
+    divSpaceMessage.insertAdjacentHTML(`beforeend`, html);
 });
