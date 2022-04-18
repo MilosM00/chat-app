@@ -29,8 +29,6 @@ const contact = document.querySelector(`.contact`);
 const nameText = document.querySelector(`.name`);
 const profileImage = document.querySelector(`.profile-img`);
 const chatImage = document.querySelector(`.chat-img`);
-const look = document.querySelector(`.look`); // div look
-const textMessage = document.querySelector(`.text-message`); // div text-message
 
 const divLogin = document.querySelector(`.login`);
 const divChat = document.querySelector(`.chat`);
@@ -47,6 +45,77 @@ const createUsernames = function(accs){
 createUsernames(accounts);
 
 buttonLogin.addEventListener(`click`, () =>{
+    passwordEvent();
+});
+
+inputPassword.addEventListener(`keyup`, (e) =>{
+    if(e.keyCode === 13){
+        e.preventDefault();
+        passwordEvent();
+    }
+});
+
+buttonLogout.addEventListener(`click`, () =>{
+    divLogin.classList.remove(`login--hidden`);
+    divChat.classList.add(`chat--hidden`);
+    inputMessage.value = ``;
+});
+
+let x = 1;
+
+buttonSendMessage.addEventListener(`click`, () =>{
+    messageEvent();
+});
+
+inputMessage.addEventListener(`keyup`, (e) =>{
+    if(e.keyCode === 13){
+        e.preventDefault();
+        messageEvent();
+    }
+});
+
+const messageEvent = function(){
+    let html = `
+    <div class="look">
+    <span class="text-message">${inputMessage.value}</span>
+    </div>
+    `;
+
+    if(x < 13){
+        
+        inputMessage.value = ``;
+        inputMessage.focus();
+        
+        divSpaceMessage.insertAdjacentHTML(`beforeend`, html);
+
+        x++;
+    }
+    
+    else{
+        x = 1;
+        x++;
+
+        inputMessage.value = ``;
+        inputMessage.focus();
+
+        document.querySelector(`.look`).remove();
+        document.querySelector(`.look`).remove();
+        document.querySelector(`.look`).remove();
+        document.querySelector(`.look`).remove();
+        document.querySelector(`.look`).remove();
+        document.querySelector(`.look`).remove();
+        document.querySelector(`.look`).remove();
+        document.querySelector(`.look`).remove();
+        document.querySelector(`.look`).remove();
+        document.querySelector(`.look`).remove();
+        document.querySelector(`.look`).remove();
+        document.querySelector(`.look`).remove();
+
+        divSpaceMessage.insertAdjacentHTML(`beforeend`, html);
+    }
+};
+
+const passwordEvent = function(){
     currentAccount = accounts.find(acc => acc.username === inputUsername.value);
 
     if(currentAccount?.password === Number(inputPassword.value)){
@@ -68,23 +137,4 @@ buttonLogin.addEventListener(`click`, () =>{
             chatImage.src = `${account1.image}`
         }
     }
-});
-
-buttonLogout.addEventListener(`click`, () =>{
-    divLogin.classList.remove(`login--hidden`);
-    divChat.classList.add(`chat--hidden`);
-    inputMessage.value = ``;
-});
-
-buttonSendMessage.addEventListener(`click`, () =>{
-    let html = `
-    <div class="look">
-    <span class="text-message">${inputMessage.value}</span>
-    </div>
-    `;
-    
-    inputMessage.value = ``;
-    inputMessage.focus();
-    
-    divSpaceMessage.insertAdjacentHTML(`beforeend`, html);
-});
+};

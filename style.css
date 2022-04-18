@@ -32,6 +32,13 @@
 .username, .password{
     padding: 10px;
     font-size: 18px;
+    border: none;
+    border: 1px solid rgb(210, 210, 210);
+}
+
+.username:focus, .password:focus{
+    outline: none;
+    border: 1px solid rgb(165, 165, 165);
 }
 
 .login-button{
@@ -85,7 +92,12 @@
     padding: 10px;
     font-size: 18px;
     border-radius: 20px;
-    border: solid 1px rgb(0, 0, 0);
+    border: none;
+    border: 1px solid rgb(175, 175, 175);
+}
+
+.message:focus{
+    outline: none;
 }
 
 .send-message{
