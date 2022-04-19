@@ -33,6 +33,7 @@ const chatImage = document.querySelector(`.chat-img`);
 const divLogin = document.querySelector(`.login`);
 const divChat = document.querySelector(`.chat`);
 const divSpaceMessage = document.querySelector(`.space-message`);
+const divHeader = document.querySelector(`.header`);
 
 
 divLogin.classList.remove(`login--hidden`);
@@ -61,8 +62,6 @@ buttonLogout.addEventListener(`click`, () =>{
     inputMessage.value = ``;
 });
 
-let x = 1;
-
 buttonSendMessage.addEventListener(`click`, () =>{
     messageEvent();
 });
@@ -74,9 +73,16 @@ inputMessage.addEventListener(`keyup`, (e) =>{
     }
 });
 
+let x = 1;
 const messageEvent = function(){
-    let html = `
-    <div class="look">
+    let htmlJ = `
+    <div class="look" style="text-align:right;">
+    <span class="text-message">${inputMessage.value}</span>
+    </div>
+    `;
+
+    let htmlS = `
+    <div class="look" style="text-align:left;">
     <span class="text-message">${inputMessage.value}</span>
     </div>
     `;
@@ -86,7 +92,12 @@ const messageEvent = function(){
         inputMessage.value = ``;
         inputMessage.focus();
         
-        divSpaceMessage.insertAdjacentHTML(`beforeend`, html);
+        if(currentAccount.owner === `Jason Johnson`){
+            divSpaceMessage.insertAdjacentHTML(`beforeend`, htmlJ);
+        }
+        else{
+            divSpaceMessage.insertAdjacentHTML(`beforeend`, htmlS);
+        }
 
         x++;
     }
@@ -111,7 +122,12 @@ const messageEvent = function(){
         document.querySelector(`.look`).remove();
         document.querySelector(`.look`).remove();
 
-        divSpaceMessage.insertAdjacentHTML(`beforeend`, html);
+        if(currentAccount.owner === `Jason Johnson`){
+            divSpaceMessage.insertAdjacentHTML(`beforeend`, htmlJ);
+        }
+        else{
+            divSpaceMessage.insertAdjacentHTML(`beforeend`, htmlS);
+        }
     }
 };
 
@@ -131,10 +147,12 @@ const passwordEvent = function(){
         if(currentAccount.owner === `Jason Johnson`){
             contact.textContent = `${account2.owner}`;
             chatImage.src = `${account2.image}`;
+            divHeader.style.paddingLeft = `0`;
         }
         else{
             contact.textContent = `${account1.owner}`;
-            chatImage.src = `${account1.image}`
+            chatImage.src = `${account1.image}`;
+            divHeader.style.paddingLeft = `275px`;
         }
     }
 };
