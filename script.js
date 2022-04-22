@@ -75,6 +75,8 @@ inputMessage.addEventListener(`keyup`, (e) =>{
 
 let x = 1;
 const messageEvent = function(){
+    if(inputMessage.value.length === 0) return inputMessage.focus();
+
     let htmlJ = `
     <div class="look" style="text-align:right;">
     <span class="text-message">${inputMessage.value}</span>
