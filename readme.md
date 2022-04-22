@@ -1,4 +1,4 @@
-# Chat App
+# Chat Application
 This is a web application for chatting. <br>
 There are two users and you can log in as them. <br><br>
 
